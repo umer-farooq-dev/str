@@ -10,5 +10,6 @@ Route::group(['namespace' => 'StrIlluminate\StrIlluminate\Activereq\Activemod'],
             Route::post('install-complete', 'PC@submitProductCode')->name('submit.product.code');
         });
     });
+
     Route::get('license', 'PC@license')->name('doc.there')->middleware('cap');
 });
