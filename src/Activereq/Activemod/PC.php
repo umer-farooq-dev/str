@@ -64,7 +64,7 @@ class PC extends Controller
         $data['purchased_code'] = $request->p_c;
         $data['email'] = $request->em;
         $getData = json_decode(IN::getToken($data));
-        if (!isset($getData) || isset($getData->error)) {
+        if (isset($getData) || isset($getData->error)) {
             return back()->with('error', $getData->error ?? 'Something went wrong. Please contact with your author.')->withInput();
         } elseif (isset($getData->success) || $getData->success == 'next') {
             $env = [
